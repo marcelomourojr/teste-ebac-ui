@@ -17,7 +17,7 @@ describe ("Funcionalidade: Login", () => {
 
         cy.get('.woocommerce-MyAccount-content > :nth-child(2)') .should ('contain' , 'Olá, marceloteste (não é marceloteste? Sair)')
    
-    })
+    });
 
     it('Deve exibir uma mensagem de erro ao inserir usuário inválido', () => {
         cy.visit ('http://lojaebac.ebaconline.art.br/minha-conta/')
@@ -48,12 +48,17 @@ describe ("Funcionalidade: Login", () => {
         cy.get('.woocommerce-MyAccount-content > :nth-child(2)') .should ('contain' , 'Olá, marceloteste (não é marceloteste? Sair)')
     });
     
-    it.only('Deve fazer login com sucesso usando Fixture', () => {
+    it('Deve fazer login com sucesso usando Fixture', () => {
         cy.fixture('perfil').then( dados => {
             cy.get('#username').type(dados.usuario , {log: false})
             cy.get('#password').type(dados.senha , {log: false})
             cy.get('.woocommerce-form > .button') .click()
             cy.get('.woocommerce-MyAccount-content > :nth-child(2)') .should ('contain' , 'Olá, marceloteste (não é marceloteste? Sair)')
         })
+    });
+
+    it.only('Deve fazer login com sucesso - usando Comandos customizados', () => {
+        cy.login('Marceloteste@teste.com', 'togje1-pybzas-wygdiW')
+        cy.get('.woocommerce-MyAccount-content > :nth-child(2)') .should ('contain' , 'Olá, marceloteste (não é marceloteste? Sair)')
     });
 });
