@@ -1,0 +1,21 @@
+[
+
+    {
+        "nomeProduto": "Abominable Hoodie",
+        "tamanho": "M",
+        "cor": "Red",
+        "quantidade": 3
+    },
+    {
+        "nomeProduto": "Hero Hoodie",
+        "tamanho": "XS",
+        "cor": "Black",
+        "quantidade": 3
+    },
+    {
+        "nomeProduto": "Grayson Crewneck Sweatshirt",
+        "tamanho": "S",
+        "cor": "Orange",
+        "quantidade": 3
+    }
+]
